@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Zones</title>
+    <link rel="stylesheet" href="manage-zones.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Water Delivery Zones</h1>
+
+        <label>Station Name:</label>
+        <input type="text" placeholder="Enter station name">
+
+        <br><br>
+
+        <label>Station Location:</label>
+        <div class="map-wrapper">
+            <iframe id="mapIframe" src="Set-Area_Using-Maps/set-area.html" frameborder="0" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 5px;"></iframe>
+        </div>
+        <div id="areaCoordinates" class="area-display">
+            <strong>Selected Area:</strong>
+            <p id="coordinatesList"></p>
+        </div>
+
+        <br><br>
+
+        <label>Phone Number:</label>
+        <input type="tel" placeholder="Enter phone number">
+
+        <br><br>
+
+        <label>Open Time:</label>
+        <input type="time">
+
+        <br><br>
+
+        <label>Close Time:</label>
+        <input type="time">
+
+        <br><br>
+
+        <table border="1" width="100%">
+            <tr>
+                <th>Station Name</th>
+                <th>Location</th>
+                <th>Phone</th>
+                <th>Open Time</th>
+                <th>Close Time</th>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <script src="manage-zones.js"></script>
+</body>
+</html>

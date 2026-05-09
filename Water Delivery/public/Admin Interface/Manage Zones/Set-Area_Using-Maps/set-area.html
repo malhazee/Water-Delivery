@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set Area Using Maps</title>
+    <link rel="stylesheet" href="set-area.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Set Delivery Area</h1>
+            <p>Search for a location or draw a polygon to define the delivery area</p>
+        </div>
+
+        <div class="search-panel">
+            <div class="search-box">
+                <input type="text" id="locationInput" placeholder="Search for a location (e.g., Downtown, Gulshan, Clifton)">
+                <button id="searchBtn" class="btn-search">Search</button>
+            </div>
+            <div id="searchStatus" class="search-status"></div>
+        </div>
+        
+        <div class="map-container">
+            <div id="map"></div>
+        </div>
+        
+        <div class="controls">
+            <input type="text" id="areaNameInput" placeholder="Enter area name" class="area-name-input">
+            <button id="saveBtn" class="btn btn-save">Save Area</button>
+            <button id="clearBtn" class="btn btn-clear">Clear</button>
+            <button id="cancelBtn" class="btn btn-cancel">Cancel</button>
+        </div>
+        
+        <div id="status" class="status"></div>
+    </div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDBRej2730DA8u10dSBGWbYwlMu8ut8QA&libraries=places,geocoding,drawing"></script>
+    <script src="set-area.js"></script>
+</body>
+</html>
