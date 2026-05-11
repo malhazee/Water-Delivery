@@ -1,4 +1,4 @@
-/* Manage Zones Styles */
+/* Manage Station Styles */
 * {
     margin: 0;
     padding: 0;
@@ -45,6 +45,57 @@ input[type="time"]:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.station-actions {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.btn {
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 11px 18px;
+}
+
+.btn-save {
+    background: #2e7d32;
+    color: white;
+}
+
+.btn-load {
+    background: #667eea;
+    color: white;
+}
+
+.btn-cancel-edit {
+    background: #64748b;
+    color: white;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.firebase-status {
+    color: #555;
+    font-size: 14px;
+    margin-top: 10px;
+    min-height: 20px;
+}
+
+.firebase-status.success {
+    color: #2e7d32;
+}
+
+.firebase-status.error {
+    color: #c62828;
 }
 
 .map-wrapper {
@@ -95,6 +146,45 @@ table td {
 
 table tr:hover {
     background: #f9f9f9;
+}
+
+.location-cell {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.location-link {
+    color: #1d4ed8;
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+.location-link:hover {
+    color: #1e40af;
+}
+
+.row-actions {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.btn-small {
+    font-size: 13px;
+    padding: 7px 10px;
+}
+
+.btn-edit {
+    background: #0f766e;
+    color: white;
+}
+
+.btn-delete {
+    background: #dc2626;
+    color: white;
 }
 
 @media (max-width: 768px) {

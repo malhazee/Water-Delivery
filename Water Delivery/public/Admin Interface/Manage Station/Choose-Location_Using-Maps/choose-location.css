@@ -149,7 +149,7 @@ body {
     position: relative;
 }
 
-.area-name-input {
+.location-name-input {
     padding: 12px 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -159,7 +159,7 @@ body {
     min-width: 150px;
 }
 
-.area-name-input:focus {
+.location-name-input:focus {
     outline: none;
     border-color: #667eea;
     box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
@@ -240,22 +240,6 @@ body {
 .status.error {
     background: #FFEBEE;
     color: #C62828;
-}
-
-/* Leaflet Draw control customization */
-.leaflet-draw-toolbar {
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-.leaflet-draw-toolbar a {
-    background-color: #667eea;
-    border-color: #667eea;
-}
-
-.leaflet-draw-toolbar a:hover {
-    background-color: #764ba2;
 }
 
 @media (max-width: 768px) {

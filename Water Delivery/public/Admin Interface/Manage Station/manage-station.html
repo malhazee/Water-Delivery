@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Station</title>
+    <link rel="stylesheet" href="manage-station.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Manage Water Delivery Station</h1>
+
+        <label>Station Name:</label>
+        <input type="text" id="stationName" placeholder="Enter station name">
+
+        <br><br>
+
+        <label>Station Location:</label>
+        <div class="map-wrapper">
+            <iframe id="mapIframe" src="Choose-Location_Using-Maps/choose-location.html" frameborder="0" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 5px;"></iframe>
+        </div>
+        <div id="areaCoordinates" class="area-display">
+            <strong>Selected Station Location:</strong>
+            <p id="coordinatesList"></p>
+        </div>
+
+        <br><br>
+
+        <label>Phone Number:</label>
+        <input type="tel" id="stationPhone" placeholder="Enter phone number">
+
+        <br><br>
+
+        <label>Open Time:</label>
+        <input type="time" id="openTime">
+
+        <br><br>
+
+        <label>Close Time:</label>
+        <input type="time" id="closeTime">
+
+        <br><br>
+
+        <div class="station-actions">
+            <button type="button" id="saveStationBtn" class="btn btn-save">Save Station to Firebase</button>
+            <button type="button" id="cancelEditBtn" class="btn btn-cancel-edit" hidden>Cancel Edit</button>
+            <button type="button" id="loadStationsBtn" class="btn btn-load">Load Stations</button>
+        </div>
+        <p id="firebaseStatus" class="firebase-status"></p>
+
+        <br>
+
+        <table border="1" width="100%">
+            <thead>
+                <tr>
+                    <th>Station Name</th>
+                    <th>Location</th>
+                    <th>Phone</th>
+                    <th>Open Time</th>
+                    <th>Close Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="stationsTableBody">
+                <tr>
+                    <td colspan="6">No station data loaded.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <script src="/__/firebase/12.12.1/firebase-app-compat.js"></script>
+    <script src="/__/firebase/12.12.1/firebase-firestore-compat.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="manage-station.js"></script>
+</body>
+</html>

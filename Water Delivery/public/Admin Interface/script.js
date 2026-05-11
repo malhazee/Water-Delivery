@@ -11,15 +11,15 @@ const views = {
     `,
     station: `
         <h2>Manage Station</h2>
-        <p>Update station information, settings, and status here.</p>
+        <iframe
+            src="Manage Station/manage-station.html"
+            title="Manage Station"
+            style="width: 100%; min-height: 80vh; border: 0; display: block;"
+        ></iframe>
     `,
     zones: `
         <h2>Manage Zones</h2>
-        <iframe
-            src="Manage Zones/manage-zones.html"
-            title="Manage Zones"
-            style="width: 100%; min-height: 80vh; border: 0; display: block;"
-        ></iframe>
+        <p>Create, update, or review delivery zones here.</p>
     `,
     orders: `
         <h2>Manage Orders</h2>
