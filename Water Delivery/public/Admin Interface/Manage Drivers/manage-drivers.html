@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Drivers</title>
+    <link rel="stylesheet" href="manage-drivers.css">
+</head>
+<body>
+    <main class="drivers-shell">
+        <section class="driver-form-panel">
+            <h1>Manage Drivers</h1>
+
+            <label for="driverName">Driver Name</label>
+            <input type="text" id="driverName" placeholder="Enter driver name">
+
+            <div class="form-grid">
+                <div>
+                    <label for="phone1">Phone 1</label>
+                    <input type="tel" id="phone1" placeholder="Primary phone number">
+                </div>
+                <div>
+                    <label for="phone2">Phone 2</label>
+                    <input type="tel" id="phone2" placeholder="Secondary phone number">
+                </div>
+            </div>
+
+            <label for="maxOrders">Maximum Loaded Orders</label>
+            <input type="number" id="maxOrders" min="1" max="50" step="1" value="5">
+
+            <div class="zones-heading">
+                <label>Operational Zones</label>
+                <button type="button" id="refreshZonesBtn" class="btn btn-secondary btn-small">Refresh Zones</button>
+            </div>
+            <div id="zonesChecklist" class="zones-checklist">
+                Loading zones...
+            </div>
+
+            <div class="driver-actions">
+                <button type="button" id="saveDriverBtn" class="btn btn-save">Save Driver to Firestore</button>
+                <button type="button" id="cancelEditBtn" class="btn btn-muted" hidden>Cancel Edit</button>
+                <button type="button" id="clearDriverBtn" class="btn btn-clear">Clear</button>
+                <button type="button" id="loadDriversBtn" class="btn btn-secondary">Load Drivers</button>
+            </div>
+            <p id="firebaseStatus" class="firebase-status"></p>
+        </section>
+
+        <section class="drivers-list-panel">
+            <h2>Saved Drivers</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Driver</th>
+                            <th>Phone 1</th>
+                            <th>Phone 2</th>
+                            <th>Operational Zones</th>
+                            <th>Max Orders</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="driversTableBody">
+                        <tr>
+                            <td colspan="6">No drivers loaded.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/__/firebase/12.12.1/firebase-app-compat.js"></script>
+    <script src="/__/firebase/12.12.1/firebase-firestore-compat.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="manage-drivers.js"></script>
+</body>
+</html>

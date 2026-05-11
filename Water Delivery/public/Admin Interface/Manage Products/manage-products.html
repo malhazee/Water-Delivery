@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Products</title>
+    <link rel="stylesheet" href="manage-products.css">
+</head>
+<body>
+    <main class="admin-shell">
+        <section class="form-panel">
+            <h1>Manage Products</h1>
+
+            <div class="form-grid">
+                <div>
+                    <label for="productName">Product Name</label>
+                    <input type="text" id="productName" placeholder="Enter product name">
+                </div>
+                <div>
+                    <label for="categorySelect">Category</label>
+                    <select id="categorySelect">
+                        <option value="">Loading categories...</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-grid">
+                <div>
+                    <label for="price">Price</label>
+                    <input type="number" id="price" min="0" step="0.01" value="0">
+                </div>
+                <div>
+                    <label for="unit">Unit</label>
+                    <input type="text" id="unit" placeholder="Bottle, box, gallon">
+                </div>
+            </div>
+
+            <label for="imageUrl">Image URL</label>
+            <input type="url" id="imageUrl" placeholder="Optional product image URL">
+
+            <label for="productDescription">Description</label>
+            <textarea id="productDescription" rows="4" placeholder="Optional product description"></textarea>
+
+            <label class="toggle-row">
+                <input type="checkbox" id="productActive" checked>
+                <span>Active product</span>
+            </label>
+
+            <div class="actions">
+                <button type="button" id="saveProductBtn" class="btn btn-save">Save Product to Firestore</button>
+                <button type="button" id="cancelEditBtn" class="btn btn-muted" hidden>Cancel Edit</button>
+                <button type="button" id="clearProductBtn" class="btn btn-clear">Clear</button>
+                <button type="button" id="loadProductsBtn" class="btn btn-secondary">Load Products</button>
+            </div>
+            <p id="firebaseStatus" class="firebase-status"></p>
+        </section>
+
+        <section class="list-panel">
+            <h2>Saved Products</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Category</th>
+                            <th>Price</th>
+                            <th>Unit</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productsTableBody">
+                        <tr>
+                            <td colspan="6">No products loaded.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/__/firebase/12.12.1/firebase-app-compat.js"></script>
+    <script src="/__/firebase/12.12.1/firebase-firestore-compat.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="manage-products.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Zones</title>
+    <link rel="stylesheet" href="manage-zones.css">
+</head>
+<body>
+    <main class="zone-shell">
+        <section class="zone-editor">
+            <div class="editor-panel">
+                <h1>Manage Delivery Zones</h1>
+
+                <label for="zoneName">Zone Name</label>
+                <input type="text" id="zoneName" placeholder="Enter zone name">
+
+                <label for="locationInput">Find Area</label>
+                <div class="search-row">
+                    <input type="text" id="locationInput" placeholder="Search area in Jordan">
+                    <button type="button" id="searchBtn" class="btn btn-secondary">Search</button>
+                </div>
+                <p id="searchStatus" class="inline-status"></p>
+
+                <label for="zoneSize">Square Side Length</label>
+                <div class="size-row">
+                    <input type="range" id="zoneSize" min="0.25" max="10" step="0.25" value="2">
+                    <input type="number" id="zoneSizeNumber" min="0.25" max="10" step="0.25" value="2">
+                    <span>km</span>
+                </div>
+
+                <div class="draw-actions">
+                    <button type="button" id="manualDrawBtn" class="btn btn-secondary">Draw Square Manually</button>
+                </div>
+
+                <div id="zoneSummary" class="zone-summary">
+                    Click the map or search for a place to position the square zone.
+                </div>
+
+                <div class="zone-actions">
+                    <button type="button" id="saveZoneBtn" class="btn btn-save">Save Zone to Firestore</button>
+                    <button type="button" id="cancelEditBtn" class="btn btn-muted" hidden>Cancel Edit</button>
+                    <button type="button" id="clearZoneBtn" class="btn btn-clear">Clear</button>
+                    <button type="button" id="loadZonesBtn" class="btn btn-secondary">Load Zones</button>
+                </div>
+                <p id="firebaseStatus" class="firebase-status"></p>
+            </div>
+
+            <div class="map-panel">
+                <div id="map"></div>
+            </div>
+        </section>
+
+        <section class="zones-list">
+            <h2>Saved Zones</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zone</th>
+                            <th>Center</th>
+                            <th>Side</th>
+                            <th>Bounds</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="zonesTableBody">
+                        <tr>
+                            <td colspan="5">No zones loaded.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <script src="/__/firebase/12.12.1/firebase-app-compat.js"></script>
+    <script src="/__/firebase/12.12.1/firebase-firestore-compat.js"></script>
+    <script src="/__/firebase/init.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDBRej2730DA8u10dSBGWbYwlMu8ut8QA&libraries=places"></script>
+    <script src="manage-zones.js"></script>
+</body>
+</html>

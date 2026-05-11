@@ -17,7 +17,7 @@
 
         <label>Station Location:</label>
         <div class="map-wrapper">
-            <iframe id="mapIframe" src="Choose-Location_Using-Maps/choose-location.html" frameborder="0" style="width: 100%; height: 600px; border: 1px solid #ddd; border-radius: 5px;"></iframe>
+            <iframe id="mapIframe" src="Choose-Location_Using-Maps/choose-location.html" frameborder="0"></iframe>
         </div>
         <div id="areaCoordinates" class="area-display">
             <strong>Selected Station Location:</strong>
@@ -50,23 +50,25 @@
 
         <br>
 
-        <table border="1" width="100%">
-            <thead>
-                <tr>
-                    <th>Station Name</th>
-                    <th>Location</th>
-                    <th>Phone</th>
-                    <th>Open Time</th>
-                    <th>Close Time</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody id="stationsTableBody">
-                <tr>
-                    <td colspan="6">No station data loaded.</td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="table-wrapper">
+            <table border="1" width="100%">
+                <thead>
+                    <tr>
+                        <th>Station Name</th>
+                        <th>Location</th>
+                        <th>Phone</th>
+                        <th>Open Time</th>
+                        <th>Close Time</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="stationsTableBody">
+                    <tr>
+                        <td colspan="6">No station data loaded.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
 
     <script src="/__/firebase/12.12.1/firebase-app-compat.js"></script>

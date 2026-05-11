@@ -7,7 +7,11 @@ const views = {
     `,
     drivers: `
         <h2>Manage Drivers</h2>
-        <p>View, add, edit, or remove driver records here.</p>
+        <iframe
+            src="Manage Drivers/manage-drivers.html"
+            title="Manage Drivers"
+            style="width: 100%; min-height: 86vh; border: 0; display: block;"
+        ></iframe>
     `,
     station: `
         <h2>Manage Station</h2>
@@ -19,7 +23,27 @@ const views = {
     `,
     zones: `
         <h2>Manage Zones</h2>
-        <p>Create, update, or review delivery zones here.</p>
+        <iframe
+            src="Manage Zones/manage-zones.html"
+            title="Manage Zones"
+            style="width: 100%; min-height: 86vh; border: 0; display: block;"
+        ></iframe>
+    `,
+    categories: `
+        <h2>Manage Categories</h2>
+        <iframe
+            src="Manage Categories/manage-categories.html"
+            title="Manage Categories"
+            style="width: 100%; min-height: 78vh; border: 0; display: block;"
+        ></iframe>
+    `,
+    products: `
+        <h2>Manage Products</h2>
+        <iframe
+            src="Manage Products/manage-products.html"
+            title="Manage Products"
+            style="width: 100%; min-height: 86vh; border: 0; display: block;"
+        ></iframe>
     `,
     orders: `
         <h2>Manage Orders</h2>

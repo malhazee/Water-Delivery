@@ -1,0 +1,290 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: #f5f7fb;
+    color: #1f2937;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-width: 0;
+    overflow-x: hidden;
+}
+
+.admin-shell {
+    display: grid;
+    gap: 18px;
+    padding: 20px;
+}
+
+.form-panel,
+.list-panel {
+    background: #ffffff;
+    border: 1px solid #dbe2ea;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+    padding: 24px;
+}
+
+h1,
+h2 {
+    color: #0f172a;
+    margin: 0 0 18px;
+}
+
+label {
+    display: block;
+    font-weight: 700;
+    margin: 16px 0 8px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    width: 100%;
+    border: 1px solid #cbd5e1;
+    border-radius: 5px;
+    color: #0f172a;
+    font: inherit;
+    font-size: 16px;
+    padding: 10px 12px;
+}
+
+input {
+    min-height: 44px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: #2563eb;
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+    outline: none;
+}
+
+.toggle-row {
+    align-items: center;
+    display: flex;
+    gap: 10px;
+}
+
+.toggle-row input {
+    height: 18px;
+    min-height: 0;
+    width: 18px;
+}
+
+.actions,
+.row-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.actions {
+    margin-top: 20px;
+}
+
+.btn {
+    border: 0;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+    min-height: 42px;
+    padding: 10px 14px;
+}
+
+.btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.65;
+}
+
+.btn-save {
+    background: #15803d;
+}
+
+.btn-secondary {
+    background: #2563eb;
+}
+
+.btn-clear {
+    background: #d97706;
+}
+
+.btn-muted {
+    background: #64748b;
+}
+
+.btn-edit {
+    background: #0f766e;
+}
+
+.btn-delete {
+    background: #dc2626;
+}
+
+.btn-small {
+    font-size: 13px;
+    min-height: 34px;
+    padding: 7px 10px;
+}
+
+.firebase-status {
+    color: #475569;
+    font-size: 14px;
+    margin: 12px 0 0;
+    min-height: 20px;
+}
+
+.firebase-status.success {
+    color: #15803d;
+}
+
+.firebase-status.error {
+    color: #b91c1c;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+table {
+    border-collapse: collapse;
+    min-width: 760px;
+    width: 100%;
+}
+
+th {
+    background: #0f172a;
+    color: #ffffff;
+    text-align: left;
+}
+
+th,
+td {
+    border-bottom: 1px solid #e2e8f0;
+    padding: 11px 12px;
+    vertical-align: top;
+}
+
+tr:hover td {
+    background: #f8fafc;
+}
+
+.status-pill {
+    border-radius: 999px;
+    display: inline-block;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 9px;
+}
+
+.status-active {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.status-inactive {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+@media (max-width: 640px) {
+    .admin-shell {
+        padding: 12px;
+    }
+
+    .form-panel,
+    .list-panel {
+        padding: 14px;
+    }
+
+    .actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        min-height: 46px;
+        width: 100%;
+    }
+
+    h1 {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    h2 {
+        font-size: 1.25rem;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
+    }
+
+    table {
+        font-size: 13px;
+        min-width: 0;
+    }
+
+    thead {
+        display: none;
+    }
+
+    tr {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+
+    td {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 104px 1fr;
+        padding: 9px 10px;
+    }
+
+    td::before {
+        color: #64748b;
+        content: "";
+        font-weight: 700;
+    }
+
+    td:nth-child(1)::before {
+        content: "Name";
+    }
+
+    td:nth-child(2)::before {
+        content: "Description";
+    }
+
+    td:nth-child(3)::before {
+        content: "Sort";
+    }
+
+    td:nth-child(4)::before {
+        content: "Status";
+    }
+
+    td:nth-child(5)::before {
+        content: "Actions";
+    }
+
+    .row-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}

@@ -9,6 +9,8 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: #f5f5f5;
     padding: 20px;
+    min-width: 0;
+    overflow-x: hidden;
 }
 
 .container {
@@ -32,10 +34,11 @@ input[type="text"],
 input[type="tel"],
 input[type="time"] {
     width: 100%;
+    min-height: 44px;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 14px;
+    font-size: 16px;
     font-family: inherit;
 }
 
@@ -105,6 +108,13 @@ input[type="time"]:focus {
     overflow: hidden;
 }
 
+#mapIframe {
+    width: 100%;
+    height: 600px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
 .area-display {
     margin-top: 10px;
     padding: 10px;
@@ -125,10 +135,17 @@ input[type="time"]:focus {
     line-height: 1.6;
 }
 
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    min-width: 760px;
 }
 
 table th {
@@ -188,16 +205,124 @@ table tr:hover {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+
     .container {
-        padding: 15px;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 16px;
+    }
+
+    .container h1 {
+        font-size: 1.45rem;
+        line-height: 1.25;
+    }
+
+    #mapIframe {
+        height: 900px;
+        min-height: 90vh;
+    }
+
+    .station-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        min-height: 44px;
+        width: 100%;
+    }
+
+    table,
+    thead,
+    tbody,
+    tr,
+    td {
+        display: block;
+        width: 100%;
     }
 
     table {
         font-size: 13px;
+        min-width: 0;
     }
 
-    table th,
+    thead {
+        display: none;
+    }
+
+    table tr {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 8px;
+        margin-bottom: 12px;
+        overflow: hidden;
+    }
+
     table td {
+        display: grid;
+        gap: 8px;
+        grid-template-columns: 104px 1fr;
         padding: 8px;
+    }
+
+    table td::before {
+        color: #64748b;
+        content: "";
+        font-weight: 700;
+    }
+
+    table td:nth-child(1)::before {
+        content: "Station";
+    }
+
+    table td:nth-child(2)::before {
+        content: "Location";
+    }
+
+    table td:nth-child(3)::before {
+        content: "Phone";
+    }
+
+    table td:nth-child(4)::before {
+        content: "Open";
+    }
+
+    table td:nth-child(5)::before {
+        content: "Close";
+    }
+
+    table td:nth-child(6)::before {
+        content: "Actions";
+    }
+
+    .row-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 12px;
+    }
+
+    #mapIframe {
+        height: 76vh;
+        min-height: 620px;
+    }
+
+    label {
+        margin-top: 12px;
+    }
+
+    .area-display {
+        font-size: 13px;
+    }
+
+    table {
+        min-width: 0;
     }
 }
